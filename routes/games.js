@@ -22,9 +22,6 @@ const sendGameCreated = require("../controllers/games");
 const sendGameById = require("../controllers/games");
 const { checkAuth } = require("../middlewares/auth");
 
-gamesRouter.delete("/games/:id", checkAuth, deleteGame, sendGameDeleted);
-
-gamesRouter.get("/games/:id", findGameById, sendGameById);
 gamesRouter.get("/games", findAllGames, sendAllGames);
 gamesRouter.post(
   "/games",
@@ -48,4 +45,7 @@ gamesRouter.put(
   updateGame,
   sendGameUpdated
 );
+gamesRouter.get("/games/:id", findGameById, sendGameById);
+gamesRouter.delete("/games/:id", checkAuth, deleteGame, sendGameDeleted);
+
 module.exports = gamesRouter;
