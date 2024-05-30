@@ -20,9 +20,8 @@ const cookieParser = require("cookie-parser");
 // Конфигурация приложения
 
 // Импорты и конфигурация приложения
-
+app.use(cors);
 app.use(
-  cors,
   cookieParser(),
   bodyParser.json(),
   pagesRouter, // Добавляем роутер для страниц
